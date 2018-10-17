@@ -1,0 +1,21 @@
+//colors
+$green: #64ba8d;
+$red: #e23051;
+$orange-dark: #fe6525;
+$orange: #fdaa27;
+$white: #fafffa;
+$grey-light: #f5f5f5;
+$grey: #e6ebeb;
+$grey-dark: #696b6b;
+$black: #141e1e;
+
+//Fonts
+@font-face {
+  font-family: "Kodchasan";
+  src: url("../fonts/Kodchasan/Kodchasan-Regular.ttf"),
+    ("../fonts/Kodchasan/Kodchasan-Light.ttf"),
+    ("../fonts/Kodchasan/Kodchasan-ExtraLight.ttf"),
+    ("../fonts/Kodchasan/Kodchasan-Italic.ttf"),
+    ("../fonts/Kodchasan/Kodchasan-LightItalic.ttf"),
+    ("../fonts/Kodchasan/Kodchasan-ExtraLightItalic.ttf");
+}

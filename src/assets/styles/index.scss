@@ -1,0 +1,262 @@
+// Imports
+@import "variables.scss";
+
+/* ELEMENT STYLES -------------------- */
+body {
+  background: fff;
+  font-family: 'Kodchasan', Arial, Helvetica, sans-serif;
+}
+
+header {
+  color: $black;
+  padding: 5px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: $grey-light;
+  border-bottom: solid 1px $grey;
+  h1 {
+    flex-grow: 1;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 200; 
+  }
+}
+
+/* FORMS */
+form {
+  display: flex;
+  background-color: $grey-light;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  border-width: 0 0 1px 0;
+  margin: 15px 10px 15px 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $white;
+  border-style: none;
+  text-shadow: none;
+  color: $black;
+  letter-spacing: 2px;
+  outline: none;
+
+  &:focus {
+    background-color: $grey;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $grey-dark;
+    letter-spacing: 2px;
+  }
+}
+
+input[type="submit"] {
+  display: block;
+  font-size: 1rem;
+  margin: 15px 15px 15px 0;
+  padding: 15px;
+  background-color: #64ba8d;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: none;
+  cursor: pointer;
+  &:hover{
+    background-color: adjust-hue($color: $green, $degrees: 15)
+  }
+}
+
+button,
+input[type="submit"] {
+  outline: none;
+  transition: all 0.2s ease, color 0.2s ease;
+}
+
+/* ICONS */
+svg {
+  width: 28px;
+  height: 19px;
+  margin-right: 5px;
+  fill: #f0f0f0;
+}
+
+.is-high-score {
+  fill: #ffc657;
+  animation: grow 0.35s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+@keyframes grow {
+  50% {
+    transform: scale(1.4) rotate(-3deg);
+  }
+}
+
+/* COMPONENT STYLES -------------------- */
+.scoreboard {
+  background: #fff;
+  width: 700px;
+  margin: 70px auto;
+  box-shadow: 2px 2px 8px $grey;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.player-list {
+  min-height: 250px;
+}
+
+.player {
+  display: flex;
+  font-size: 1.2em;
+  border-bottom: solid 1px #eeeeee;
+  letter-spacing: 2px;
+}
+
+.player-name:hover .remove-player {
+  visibility: visible;
+}
+
+.player-name,
+.counter-score {
+  color: $black;
+}
+
+.player-name {
+  flex-grow: 1;
+  line-height: 3.5em;
+  padding-left: 10px;
+}
+
+.remove-player {
+  font-size: 1.15em;
+  border: none;
+  outline: none;
+  visibility: hidden;
+  color: $red;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  padding: 0;
+  background: none;
+}
+
+.stats,
+.stopwatch {
+  width: 170px;
+}
+
+.stats {
+  display: flex;
+  margin: 0 0 0 28px;
+  font-weight: normal;
+}
+
+.stats td:first-child {
+  text-align: right;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 0.7em;
+}
+
+.stats td:last-child {
+  text-align: left;
+}
+
+.stopwatch {
+  padding: 15px 10px 5px 10px;
+  margin: -5px -10px -5px 10px;
+  background: $grey;
+}
+
+.stopwatch-time {
+  display: block;
+  font-family: monospace;
+  font-size: 3rem;
+}
+
+.stopwatch {
+
+  button{
+    margin: 8px 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: none;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .start-stop {
+    background-color: $green;
+    &:hover{
+      background-color: adjust-hue($color: $green, $degrees: 15);
+    }
+    &.stop{
+      background-color: $red;
+      &:hover{
+        background-color: adjust-hue($color: $red, $degrees: 15);
+      }
+    }
+  }
+  
+  .reset{
+    background-color: $orange;
+    &:hover{
+      background-color: adjust-hue($color: $orange, $degrees: 2);
+    }
+  }
+  
+  h2 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+  
+}
+
+.counter {
+  display: flex;
+  width: 190px;
+}
+
+.counter-action {
+  border: none;
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #b0aeba;
+  background-color: #dcdcdc;
+  display: block;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.counter-action:hover {
+  color: #fff;
+}
+
+.increment:hover {
+  background: $green;
+}
+
+.decrement:hover {
+  background: #ef5350;
+}
+
+.counter-score {
+  flex-grow: 1;
+  text-align: center;
+  font-family: monospace;
+  font-size: 2em;
+  line-height: 2em;
+}
